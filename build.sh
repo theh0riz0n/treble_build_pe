@@ -41,6 +41,10 @@ applyPatches() {
     bash $BL/apply-patches.sh $BL phh
     echo
 
+    echo "--> Applying Peter patches"
+    bash $BL/apply-patches.sh $BL peter
+    echo
+
     echo "--> Applying personal patches"
     bash $BL/apply-patches.sh $BL personal
     echo
