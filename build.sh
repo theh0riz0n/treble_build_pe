@@ -73,8 +73,8 @@ buildVariant() {
 
 buildSlimVariant() {
     echo "--> Building treble_arm64_bvN-slim"
-    wget https://gist.github.com/ponces/891139a70ee4fdaf1b1c3aed3a59534e/raw/slim.patch -O /tmp/slim.patch
-    (cd vendor/gapps && git am /tmp/slim.patch && rm /tmp/slim.patch)
+    wget https://gist.github.com/ponces/0fd06b7ef0ea2bab1eaa5794c0e5e834/raw/slim13.patch -O /tmp/slim13.patch
+    (cd vendor/gapps && git am /tmp/slim13.patch && rm /tmp/slim13.patch)
     make -j$(nproc --all) systemimage
     (cd vendor/gapps && git reset --hard HEAD~1)
     mv $OUT/system.img $BD/system-treble_arm64_bvN-slim.img
@@ -93,9 +93,9 @@ buildVndkliteVariant() {
 
 generatePackages() {
     echo "--> Generating packages"
-    xz -cv $BD/system-treble_arm64_bvN.img -T0 > $BD/"$BUILD"_arm64-ab-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
-    xz -cv $BD/system-treble_arm64_bvN-vndklite.img -T0 > $BD/"$BUILD"_arm64-ab-vndklite-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
-    xz -cv $BD/system-treble_arm64_bvN-slim.img -T0 > $BD/"$BUILD"_arm64-ab-slim-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
+    xz -cv $BD/system-treble_arm64_bvN.img -T0 > $BD/PixelExperience_arm64-ab-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
+    xz -cv $BD/system-treble_arm64_bvN-vndklite.img -T0 > $BD/PixelExperience_arm64-ab-vndklite-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
+    xz -cv $BD/system-treble_arm64_bvN-slim.img -T0 > $BD/PixelExperience_arm64-ab-slim-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
     rm -rf $BD/system-*.img
     echo
 }
