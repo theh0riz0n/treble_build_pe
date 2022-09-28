@@ -28,10 +28,16 @@ index 5f63e8de04..aa1d825d2f 100644
          "libaudiohal@5.0",
          "libaudiohal@6.0",
 diff --git a/media/libaudiohal/FactoryHalHidl.cpp b/media/libaudiohal/FactoryHalHidl.cpp
-index 590fec5443..0b2d76bce0 100644
+index 590fec5443..46b6bd757a 100644
 --- a/media/libaudiohal/FactoryHalHidl.cpp
 +++ b/media/libaudiohal/FactoryHalHidl.cpp
-@@ -41,7 +41,8 @@ static constexpr std::array<std::pair<std::pair<int, int>, const char*>, 5> sAud
+@@ -36,12 +36,13 @@ namespace {
+  */
+ #define CONC_VERSION(maj, min) #maj "." #min
+ #define DECLARE_VERSION(maj, min) std::make_pair(std::make_pair(maj, min), CONC_VERSION(maj, min))
+-static constexpr std::array<std::pair<std::pair<int, int>, const char*>, 5> sAudioHALVersions = {
++static constexpr std::array<std::pair<std::pair<int, int>, const char*>, 6> sAudioHALVersions = {
+     DECLARE_VERSION(7, 1),
      DECLARE_VERSION(7, 0),
      DECLARE_VERSION(6, 0),
      DECLARE_VERSION(5, 0),
