@@ -20,12 +20,12 @@ index 6a317e4..e69de29 100644
 -PRODUCT_COPY_FILES += \
 -	device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 diff --git a/base.mk b/base.mk
-index ada5526..9702604 100644
+index 301fee9..c144c1e 100644
 --- a/base.mk
 +++ b/base.mk
-@@ -17,10 +17,6 @@ PRODUCT_COPY_FILES += \
-     device/phh/treble/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml \
-     device/phh/treble/bluetooth/audio/config/sysbta_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUTY_SYSTEM)/etc/sysbta_audio_policy_configuration_7_0.xml
+@@ -8,10 +8,6 @@ PRODUCT_COPY_FILES := \
+ 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+ 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
  
 -#Use a more decent APN config
 -PRODUCT_COPY_FILES += \
