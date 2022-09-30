@@ -61,7 +61,7 @@ index 5f9392d1..6af47687 100644
  		rc = cil_symtab_get_datum(symtab, key, &prev);
  		if (rc != SEPOL_OK) {
  			cil_log(CIL_ERR, "Re-declaration of %s %s, but previous declaration could not be found\n",cil_node_to_string(node), key);
-@@ -129,7 +129,14 @@ int cil_add_decl_to_symtab(struct cil_db *db, symtab_t *symtab, hashtab_key_t ke
+@@ -129,12 +129,18 @@ int cil_add_decl_to_symtab(struct cil_db *db, symtab_t *symtab, hashtab_key_t ke
  				cil_node_to_string(node), key);
  			cil_tree_log(node, CIL_ERR, "Previous declaration of %s",
  				     cil_node_to_string(n));
@@ -77,6 +77,11 @@ index 5f9392d1..6af47687 100644
  		}
  		/* multiple_decls is enabled and works for this datum type, add node */
  		cil_list_append(prev->nodes, CIL_NODE, node);
+ 		node->data = prev;
+-		return SEPOL_EEXIST;
+ 	}
+ 
+ 	return SEPOL_OK;
 diff --git a/libsepol/cil/src/cil_resolve_ast.c b/libsepol/cil/src/cil_resolve_ast.c
 index 69a8a2ed..2ed1a62d 100644
 --- a/libsepol/cil/src/cil_resolve_ast.c
