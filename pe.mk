@@ -4,8 +4,10 @@ $(call inherit-product, device/custom/sepolicy/common/sepolicy.mk)
 -include vendor/aosp/build/core/config.mk
 
 TARGET_BOOT_ANIMATION_RES := 1080
+
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_SUPPORTS_CALL_RECORDING := true
+
 TARGET_USES_PREBUILT_VENDOR_SEPOLICY := true
 TARGET_HAS_FUSEBLK_SEPOLICY_ON_VENDOR := true
 
