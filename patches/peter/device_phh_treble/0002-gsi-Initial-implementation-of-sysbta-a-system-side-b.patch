@@ -14572,10 +14572,10 @@ index 999ff97..09cde27 100644
 +/system/bin/hw/android\.hardware\.bluetooth\.audio-service-system u:object_r:hal_audio_sysbta_exec:s0
 diff --git a/sepolicy/hal_audio_sysbta.te b/sepolicy/hal_audio_sysbta.te
 new file mode 100644
-index 0000000..d871ed3
+index 0000000..53c31cf
 --- /dev/null
 +++ b/sepolicy/hal_audio_sysbta.te
-@@ -0,0 +1,10 @@
+@@ -0,0 +1,14 @@
 +type hal_audio_sysbta, domain, coredomain;
 +hal_server_domain(hal_audio_sysbta, hal_audio)
 +
@@ -14586,6 +14586,10 @@ index 0000000..d871ed3
 +
 +# allow audioserver to call hal_audio dump with its own fd to retrieve status
 +allow hal_audio_sysbta audioserver:fifo_file write;
++
++allow servicemanager hal_audio_sysbta:dir { search };
++allow servicemanager hal_audio_sysbta:file { open read };
++allow servicemanager hal_audio_sysbta:process { getattr };
 diff --git a/sepolicy/service_contexts b/sepolicy/service_contexts
 index 7680633..73c6722 100644
 --- a/sepolicy/service_contexts
