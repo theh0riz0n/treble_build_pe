@@ -83,7 +83,6 @@ buildSlimVariant() {
     echo "--> Building treble_arm64_bvN-slim"
     wget https://gist.github.com/ponces/0fd06b7ef0ea2bab1eaa5794c0e5e834/raw/slim13.patch -O /tmp/slim13.patch
     (cd vendor/gapps && git am /tmp/slim13.patch && rm /tmp/slim13.patch)
-    lunch treble_arm64_bvN-userdebug
     make -j$(nproc --all) systemimage
     (cd vendor/gapps && git reset --hard HEAD~1)
     mv $OUT/system.img $BD/system-treble_arm64_bvN-slim.img
