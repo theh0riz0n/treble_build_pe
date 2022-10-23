@@ -20,7 +20,7 @@ index 6a317e4..e69de29 100644
 -PRODUCT_COPY_FILES += \
 -	device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 diff --git a/base.mk b/base.mk
-index ada5526..9702604 100644
+index 3518826..da4535b 100644
 --- a/base.mk
 +++ b/base.mk
 @@ -17,10 +17,6 @@ PRODUCT_COPY_FILES += \
@@ -31,7 +31,7 @@ index ada5526..9702604 100644
 -PRODUCT_COPY_FILES += \
 -	device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 -
- BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/phh/treble/sepolicy
+ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += device/phh/treble/sepolicy
  PRODUCT_PACKAGE_OVERLAYS += device/phh/treble/overlay
  
 -- 

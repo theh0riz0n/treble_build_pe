@@ -37,16 +37,16 @@ applyPatches() {
     bash $BL/apply-patches.sh $BL prerequisite
     echo
 
-    echo "--> Applying PHH patches"
+    echo "--> Applying TrebleDroid patches"
     cd device/phh/treble
     cp $BL/pe.mk .
     bash generate.sh pe
     cd ../../..
-    bash $BL/apply-patches.sh $BL phh
+    bash $BL/apply-patches.sh $BL trebledroid
     echo
 
-    echo "--> Applying Peter patches"
-    bash $BL/apply-patches.sh $BL peter
+    echo "--> Applying PHH patches"
+    bash $BL/apply-patches.sh $BL phh
     echo
 
     echo "--> Applying personal patches"
