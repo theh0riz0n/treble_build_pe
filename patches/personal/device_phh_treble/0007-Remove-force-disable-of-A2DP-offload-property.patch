@@ -1,7 +1,7 @@
 From 74b02bce9602e149ca973a4e338dfc94cb57338b Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Sun, 16 Oct 2022 21:02:52 +0100
-Subject: [PATCH 10/10] Remove force disable of A2DP offload property
+Subject: [PATCH 7/7] Remove force disable of A2DP offload property
 
 ---
  vndk.rc | 9 ---------
