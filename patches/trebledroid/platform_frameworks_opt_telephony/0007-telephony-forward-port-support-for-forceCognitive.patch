@@ -17,7 +17,7 @@ diff --git a/src/java/com/android/internal/telephony/RadioDataProxy.java b/src/j
 index cbc762a59d..868a926667 100644
 --- a/src/java/com/android/internal/telephony/RadioDataProxy.java
 +++ b/src/java/com/android/internal/telephony/RadioDataProxy.java
-@@ -21,6 +21,7 @@
+@@ -21,6 +21,7 @@ import android.net.LinkProperties;
  import android.os.AsyncResult;
  import android.os.Message;
  import android.os.RemoteException;
@@ -25,7 +25,7 @@ index cbc762a59d..868a926667 100644
  import android.telephony.Rlog;
  import android.telephony.ServiceState;
  import android.telephony.data.DataProfile;
-@@ -234,7 +235,8 @@ public void setDataProfile(int serial, DataProfile[] profiles, boolean isRoaming
+@@ -234,7 +235,8 @@ public class RadioDataProxy extends RadioServiceProxy {
          } else {
              ArrayList<android.hardware.radio.V1_0.DataProfileInfo> dpis = new ArrayList<>();
              for (DataProfile dp : profiles) {
@@ -39,7 +39,7 @@ diff --git a/src/java/com/android/internal/telephony/dataconnection/DcTracker.ja
 index 28f69dcdc9..3e73e2b9ef 100755
 --- a/src/java/com/android/internal/telephony/dataconnection/DcTracker.java
 +++ b/src/java/com/android/internal/telephony/dataconnection/DcTracker.java
-@@ -2160,8 +2160,9 @@ private boolean setupData(ApnContext apnContext, int radioTech,
+@@ -2160,8 +2160,9 @@ public class DcTracker extends Handler {
          }
  
          // profile id is only meaningful when the profile is persistent on the modem.
