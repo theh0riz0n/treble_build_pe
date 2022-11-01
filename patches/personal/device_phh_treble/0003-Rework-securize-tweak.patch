@@ -4,7 +4,7 @@ Date: Wed, 25 Dec 2019 12:34:05 +0200
 Subject: [PATCH 3/7] Rework securize tweak
 
 ---
- base.mk | 1 -
+ base.mk      |  1 -
  rw-system.sh | 54 ++++++++++++++++++++++++++++++----------------------
  2 files changed, 32 insertions(+), 23 deletions(-)
 
@@ -117,3 +117,5 @@ index 5bfa270..5406110 100644
      f=/vendor/lib$abi/libstagefright_foundation.so
      if [ -f "$f" ];then
 -- 
+2.34.1
+
