@@ -45,10 +45,6 @@ applyPatches() {
     bash $BL/apply-patches.sh $BL trebledroid
     echo
 
-    echo "--> Applying PHH patches"
-    bash $BL/apply-patches.sh $BL phh
-    echo
-
     echo "--> Applying personal patches"
     bash $BL/apply-patches.sh $BL personal
     echo
