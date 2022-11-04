@@ -14,8 +14,8 @@ index c3a638c4c36a..a392a953371d 100644
 --- a/core/java/android/view/KeyEvent.java
 +++ b/core/java/android/view/KeyEvent.java
 @@ -2035,6 +2035,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
-         switch (keyCode) {
              case KeyEvent.KEYCODE_CAMERA:
+             case KeyEvent.KEYCODE_FOCUS:
              case KeyEvent.KEYCODE_MENU:
 +            case KeyEvent.KEYCODE_HOME:
              case KeyEvent.KEYCODE_PAIRING:

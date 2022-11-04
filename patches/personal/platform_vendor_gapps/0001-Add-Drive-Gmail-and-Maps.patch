@@ -11,7 +11,7 @@ diff --git a/config.mk b/config.mk
 index fbde9d4..23953dd 100644
 --- a/config.mk
 +++ b/config.mk
-@@ -56,16 +56,19 @@ PRODUCT_PACKAGES += \
+@@ -56,10 +56,12 @@ PRODUCT_PACKAGES += \
      Chrome-Stub \
      DevicePolicyPrebuilt \
      DiagnosticsToolPrebuilt \
@@ -24,7 +24,8 @@ index fbde9d4..23953dd 100644
      MarkupGoogle \
      Photos \
      PixelThemesStub \
-     PixelWallpapers2021 \
+@@ -67,6 +69,7 @@ PRODUCT_PACKAGES += \
+     PixelWallpapers2022 \
      PrebuiltBugle \
      PrebuiltDeskClockGoogle \
 +    PrebuiltGmail \

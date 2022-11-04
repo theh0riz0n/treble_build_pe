@@ -5,39 +5,9 @@ Subject: [PATCH] Revert "Biometrics: Allow disabling of fingerprint cleanups"
 
 This reverts commit f4d94e695e8107fd5fcd043a3174c4d9583277a9.
 ---
- core/res/res/values/custom_config.xml                     | 3 ---
- core/res/res/values/custom_symbols.xml                    | 3 ---
  .../sensors/fingerprint/hidl/Fingerprint21.java           | 8 --------
- 3 files changed, 14 deletions(-)
+ 1 file changed, 8 deletions(-)
 
-diff --git a/core/res/res/values/custom_config.xml b/core/res/res/values/custom_config.xml
-index f81c507355de..4f4be0081579 100644
---- a/core/res/res/values/custom_config.xml
-+++ b/core/res/res/values/custom_config.xml
-@@ -26,9 +26,6 @@
-     <!-- Whether devices suports in-display fingerprint when screen is off -->
-     <bool name="config_supportsScreenOffUdfps">false</bool>
- 
--    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
--    <bool name="config_cleanupUnusedFingerprints">true</bool>
--
-     <!-- Whether to cancel fingerprint operation if not idle -->
-     <bool name="config_fpCancelIfNotIdle">false</bool>
- </resources>
-diff --git a/core/res/res/values/custom_symbols.xml b/core/res/res/values/custom_symbols.xml
-index e8486c5e07cb..9c3de62729f0 100644
---- a/core/res/res/values/custom_symbols.xml
-+++ b/core/res/res/values/custom_symbols.xml
-@@ -14,9 +14,6 @@
-     <!-- Whether devices suports in-display fingerprint when screen is off -->
-     <java-symbol type="bool" name="config_supportsScreenOffUdfps" />
- 
--    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
--    <java-symbol type="bool" name="config_cleanupUnusedFingerprints" />
--
-     <!-- Whether to cancel fingerprint operation if not idle -->
-     <java-symbol type="bool" name="config_fpCancelIfNotIdle" />
- </resources>
 diff --git a/services/core/java/com/android/server/biometrics/sensors/fingerprint/hidl/Fingerprint21.java b/services/core/java/com/android/server/biometrics/sensors/fingerprint/hidl/Fingerprint21.java
 index aff0387658db..1f8e1791c030 100644
 --- a/services/core/java/com/android/server/biometrics/sensors/fingerprint/hidl/Fingerprint21.java
