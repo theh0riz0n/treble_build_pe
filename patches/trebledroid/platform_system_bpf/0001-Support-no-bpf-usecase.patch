@@ -1,7 +1,7 @@
 From 4d11d4a3ada225aa4c693a0a47dd6e5e887360d1 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 13 Oct 2021 10:56:52 -0400
-Subject: [PATCH] Support no-bpf usecase
+Subject: [PATCH 1/2] Support no-bpf usecase
 
 Change-Id: I75a427a2a41aa4ab1104ad88a891bef0dc2d9c91
 ---
