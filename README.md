@@ -26,3 +26,4 @@ These people have helped this project in some way or another, so they should be 
 - [haridhayal11](https://github.com/haridhayal11)
 - [sooti](https://github.com/sooti)
 - [Iceows](https://github.com/Iceows)
+- [ChonDoit](https://github.com/ChonDoit)
