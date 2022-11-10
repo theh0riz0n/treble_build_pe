@@ -1,4 +1,4 @@
-From c5b2273ea1f639e89fd8acb58e6ecd7bcbaf14b3 Mon Sep 17 00:00:00 2001
+From f3354e1d09ce5dfb1d761dc1ef6fb29fef7aa8e7 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Mon, 3 Oct 2022 13:50:36 +0100
 Subject: [PATCH 11/13] fs_mgr: Keep allowing encryptable fstab flag

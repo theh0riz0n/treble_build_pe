@@ -1,8 +1,8 @@
-From c1c2c1b963d206e97e20e554cdefe98b9f4f73c8 Mon Sep 17 00:00:00 2001
+From b674530d59efc2ea71198f5c814054fb73de52ef Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Wed, 19 Oct 2022 02:20:05 +0000
-Subject: [PATCH 2/2] Revert "detect inability to write to index != 0 of bpf map
- array"
+Subject: [PATCH 2/2] Revert "detect inability to write to index != 0 of bpf
+ map array"
 
 This reverts commit ead9d83423877458023056f6ccf9390950d6726f.
 ---
@@ -10,7 +10,7 @@ This reverts commit ead9d83423877458023056f6ccf9390950d6726f.
  1 file changed, 9 deletions(-)
 
 diff --git a/bpfloader/BpfLoader.cpp b/bpfloader/BpfLoader.cpp
-index 5cd80b7..bc72811 100644
+index bbfa7a8..9ace0fa 100644
 --- a/bpfloader/BpfLoader.cpp
 +++ b/bpfloader/BpfLoader.cpp
 @@ -199,15 +199,6 @@ int main(int argc, char** argv) {
@@ -30,5 +30,5 @@ index 5cd80b7..bc72811 100644
          ALOGE("Failed to set bpf.progs_loaded property");
          return 1;
 -- 
-2.34.1
+2.25.1
 

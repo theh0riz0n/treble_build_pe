@@ -1,4 +1,4 @@
-From d07387eab05c1a95005cb8e9b2e7e4936e8e5633 Mon Sep 17 00:00:00 2001
+From 2552a1fe61e84cb3c42b233b154ed9ce3b4dd96c Mon Sep 17 00:00:00 2001
 From: Danny Lin <danny@kdrag0n.dev>
 Date: Sat, 16 Oct 2021 05:27:57 -0700
 Subject: [PATCH 06/32] Add support for app signature spoofing
@@ -84,7 +84,7 @@ index 7439b2f0921f..eadcac3af765 100644
           {@link android.content.pm.PackageManager#addPackageToPreferred}
           for details. -->
 diff --git a/core/res/res/values/strings.xml b/core/res/res/values/strings.xml
-index e5d90f00f327..7ac26e536f2a 100644
+index c6b60f586047..ecf5034f18bb 100644
 --- a/core/res/res/values/strings.xml
 +++ b/core/res/res/values/strings.xml
 @@ -974,6 +974,18 @@
