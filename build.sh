@@ -12,11 +12,16 @@ set -e
 
 BL=$PWD/treble_build_pe
 BD=$HOME/builds
+BRANCH=$1
+
+[ "$BRANCH" == "" ] && BRANCH="thirteen"
+[ "$BRANCH" == "thirteen" ] && BUILD="PixelExperience" || BUILD="PixelExperience_Plus"
+[ "$BRANCH" == "thirteen" ] && PEMK="$BL/pe.mk" || PEMK="$BL/peplus.mk"
 
 initRepos() {
     if [ ! -d .repo ]; then
         echo "--> Initializing workspace"
-        repo init -u https://github.com/PixelExperience/manifest -b thirteen
+        repo init -u https://github.com/PixelExperience/manifest -b $BRANCH
         echo
 
         echo "--> Preparing local manifest"
@@ -39,14 +44,14 @@ applyPatches() {
 
     echo "--> Applying TrebleDroid patches"
     cd device/phh/treble
-    cp $BL/pe.mk .
-    bash generate.sh pe
+    cp $PEMK .
+    bash generate.sh $(echo $PEMK | sed "s#$BL/##;s#.mk##")
     cd ../../..
-    bash $BL/apply-patches.sh $BL trebledroid
+    bash $BL/apply-patches.sh $BL trebledroid $BRANCH
     echo
 
     echo "--> Applying personal patches"
-    bash $BL/apply-patches.sh $BL personal
+    bash $BL/apply-patches.sh $BL personal $BRANCH
     echo
 }
 
@@ -96,9 +101,9 @@ buildVndkliteVariant() {
 
 generatePackages() {
     echo "--> Generating packages"
-    xz -cv $BD/system-treble_arm64_bvN.img -T0 > $BD/PixelExperience_arm64-ab-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
-    xz -cv $BD/system-treble_arm64_bvN-vndklite.img -T0 > $BD/PixelExperience_arm64-ab-vndklite-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
-    xz -cv $BD/system-treble_arm64_bvN-slim.img -T0 > $BD/PixelExperience_arm64-ab-slim-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
+    xz -cv $BD/system-treble_arm64_bvN.img -T0 > $BD/"$BUILD"_arm64-ab-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
+    xz -cv $BD/system-treble_arm64_bvN-vndklite.img -T0 > $BD/"$BUILD"_arm64-ab-vndklite-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
+    xz -cv $BD/system-treble_arm64_bvN-slim.img -T0 > $BD/"$BUILD"_arm64-ab-slim-13.0-$BUILD_DATE-UNOFFICIAL.img.xz
     rm -rf $BD/system-*.img
     echo
 }
