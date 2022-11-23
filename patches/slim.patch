@@ -1,0 +1,85 @@
+From b77f42eacac1f9dafb90498fab93e075193d1ff4 Mon Sep 17 00:00:00 2001
+From: Alberto Ponces <ponces26@gmail.com>
+Date: Tue, 27 Sep 2022 12:14:29 +0000
+Subject: [PATCH] Slim Pixel Experience 13
+
+---
+ config.mk                                                   | 19 -------------------
+ system_ext/packages/privileged_apps/TurboAdapter/Android.mk | 2 ++
+ 2 files changed, 2 insertions(+), 19 deletions(-)
+
+diff --git a/config.mk b/config.mk
+index 6f265d8..a7a2564 100644
+--- a/config.mk
++++ b/config.mk
+@@ -16,25 +16,12 @@
+ #
+ #
+ 
+-# Recorder
+-ifeq ($(TARGET_SUPPORTS_GOOGLE_RECORDER), true)
+-PRODUCT_PACKAGES += \
+-    RecorderPrebuilt
+-endif
+-
+ # arcore
+ ifeq ($(TARGET_INCLUDE_STOCK_ARCORE),true)
+ PRODUCT_PACKAGES += \
+     arcore
+ endif
+ 
+-# Live Wallpapers
+-ifeq ($(TARGET_INCLUDE_LIVE_WALLPAPERS),true)
+-PRODUCT_PACKAGES += \
+-    PixelLiveWallpaperPrebuilt \
+-    MicropaperPrebuilt
+-endif
+-
+ # Quick Tap
+ ifeq ($(TARGET_SUPPORTS_QUICK_TAP),true)
+ PRODUCT_PACKAGES += \
+@@ -56,20 +43,14 @@ PRODUCT_PACKAGES += \
+     Chrome-Stub \
+     DevicePolicyPrebuilt \
+     DiagnosticsToolPrebuilt \
+-    Drive \
+     GoogleContacts \
+     GoogleTTS \
+     LatinIMEGooglePrebuilt \
+     LocationHistoryPrebuilt \
+-    Maps \
+     MarkupGoogle \
+-    Photos \
+     PixelThemesStub \
+-    PixelThemesStub2022_and_newer \
+-    PixelWallpapers2022 \
+     PrebuiltBugle \
+     PrebuiltDeskClockGoogle \
+-    PrebuiltGmail \
+     PrebuiltGoogleAdservicesTvp \
+     PrebuiltGoogleTelemetryTvp \
+     SoundAmplifierPrebuilt \
+@@ -123,7 +104,6 @@ PRODUCT_PACKAGES += \
+     Showcase \
+     TetheringEntitlement \
+     TurboPrebuilt \
+-    Velvet \
+     VzwOmaTrigger \
+     WellbeingPrebuilt \
+     WfcActivation
+diff --git a/system_ext/packages/privileged_apps/TurboAdapter/Android.mk b/system_ext/packages/privileged_apps/TurboAdapter/Android.mk
+index 7bbd1ef..dad6db7 100644
+--- a/system_ext/packages/privileged_apps/TurboAdapter/Android.mk
++++ b/system_ext/packages/privileged_apps/TurboAdapter/Android.mk
+@@ -30,7 +30,9 @@ LOCAL_CERTIFICATE := platform
+ LOCAL_MODULE_CLASS := APPS
+ LOCAL_SYSTEM_EXT_MODULE := true
+ LOCAL_PRIVILEGED_MODULE := true
++ifneq ($(filter arm64,$(TARGET_ARCH)),)
+ LOCAL_REQUIRED_MODULES := libpowerstatshaldataprovider
++endif
+ LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+ include $(BUILD_PREBUILT)
+ 
+-- 
+2.32.0
