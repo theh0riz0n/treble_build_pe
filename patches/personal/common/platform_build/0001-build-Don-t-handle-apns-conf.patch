@@ -17,7 +17,7 @@ index a37fd48af..5470ad2be 100644
 @@ -26,10 +26,5 @@ PRODUCT_VENDOR_PROPERTIES := \
  PRODUCT_COPY_FILES := \
      frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
-
+ 
 -ifeq ($(CUSTOM_BUILD),)
 -PRODUCT_COPY_FILES += \
 -    device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
