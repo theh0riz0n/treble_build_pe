@@ -14,9 +14,9 @@ BL=$PWD/treble_build_pe
 BD=$HOME/builds
 BRANCH=$1
 
-[ "$BRANCH" == "" ] && BRANCH="thirteen"
-[ "$BRANCH" == "thirteen" ] && BUILD="PixelExperience" || BUILD="PixelExperience_Plus"
-[ "$BRANCH" == "thirteen" ] && PEMK="$BL/pe.mk" || PEMK="$BL/peplus.mk"
+[ "$BRANCH" == "plus" ] && BRANCH="thirteen-plus" || BRANCH="thirteen"
+[ "$BRANCH" == "thirteen-plus" ] && BUILD="PixelExperience_Plus" || BUILD="PixelExperience"
+[ "$BRANCH" == "thirteen-plus" ] && PEMK="$BL/peplus.mk" || PEMK="$BL/pe.mk"
 
 initRepos() {
     if [ ! -d .repo ]; then
