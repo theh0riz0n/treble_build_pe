@@ -28,12 +28,12 @@ index 7797d8ed..bfa106dc 100644
 +endif # TARGET_NO_KERNEL_OVERRIDE
  endif # TARGET_NO_KERNEL
 diff --git a/config/common.mk b/config/common.mk
-index b30763a7..57541f3e 100644
+index 134ad01e..ea459b42 100644
 --- a/config/common.mk
 +++ b/config/common.mk
-@@ -182,6 +182,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
+@@ -177,6 +177,8 @@ PRODUCT_PACKAGES += \
  PRODUCT_PRODUCT_PROPERTIES += \
-     ro.iorapd.enable=true
+     ro.boot.vendor.overlay.theme=com.android.internal.systemui.navbar.gestural
  
 +TARGET_NO_KERNEL_OVERRIDE := true
 +
