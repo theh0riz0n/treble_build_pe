@@ -385,7 +385,7 @@ index 6fbc3c66c1bc..748152aa7c97 100644
      }
  
      /**
-@@ -773,18 +858,104 @@ public class AuthService extends SystemService {
+@@ -773,14 +858,100 @@ public class AuthService extends SystemService {
                  ? modality : (modality & ~BiometricAuthenticator.TYPE_CREDENTIAL);
      }
  
@@ -476,10 +476,6 @@ index 6fbc3c66c1bc..748152aa7c97 100644
 -        final int[] udfpsProps = getContext().getResources().getIntArray(
 +        int[] udfpsProps = getContext().getResources().getIntArray(
                  com.android.internal.R.array.config_udfps_sensor_props);
- 
-         // Non-empty workaroundLocations indicates that the sensor is SFPS.
-         final List<SensorLocationInternal> workaroundLocations =
-                 getWorkaroundSensorProps(getContext());
  
 -        final boolean isUdfps = !ArrayUtils.isEmpty(udfpsProps);
 +        boolean isUdfps = !ArrayUtils.isEmpty(udfpsProps);

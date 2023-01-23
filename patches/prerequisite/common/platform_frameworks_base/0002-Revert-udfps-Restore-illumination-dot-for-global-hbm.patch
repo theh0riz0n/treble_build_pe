@@ -1,7 +1,7 @@
 From 78e1109d05d212e62bc7fb7697a96a9df4f4ae88 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Wed, 4 Jan 2023 09:59:33 +0000
-Subject: [PATCH 2/2] Revert "udfps: Restore illumination dot for global hbm"
+Subject: [PATCH 2/3] Revert "udfps: Restore illumination dot for global hbm"
 
 This reverts commit 45d40e420f1a9a8d5884fee4b095ea24591279c5.
 
