@@ -19,10 +19,10 @@ index d591cc809129..d2e98c181260 100644
 -        val maxBrightness = File("/sys/class/backlight/panel0-backlight/max_brightness").readText().toDouble()
 +        val brightnessFile = File("/sys/class/backlight/panel/brightness")
 +        val maxBrightnessFile = File("/sys/class/backlight/panel/max_brightness")
-+        
++
 +        var brightness: Double = 0.0
 +        var maxBrightness: Double = 0.0
-+        
++
 +        if (brightnessFile.exists() && maxBrightnessFile.exists()) {
 +            brightness = brightnessFile.readText().toDouble()
 +            maxBrightness = maxBrightnessFile.readText().toDouble()
