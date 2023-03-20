@@ -1,4 +1,4 @@
-From 0472ca7d04e62b997bedb437819af7ca16d9f395 Mon Sep 17 00:00:00 2001
+From 993d568f99fd92364e827788bc01023d29e9faff Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 6 Jun 2020 18:21:56 +0200
 Subject: [PATCH 13/38] HOME deserves to wake-up devices just as well as back
@@ -14,8 +14,8 @@ index c3a638c4c36a..a392a953371d 100644
 --- a/core/java/android/view/KeyEvent.java
 +++ b/core/java/android/view/KeyEvent.java
 @@ -2035,6 +2035,7 @@ public class KeyEvent extends InputEvent implements Parcelable {
+         switch (keyCode) {
              case KeyEvent.KEYCODE_CAMERA:
-             case KeyEvent.KEYCODE_FOCUS:
              case KeyEvent.KEYCODE_MENU:
 +            case KeyEvent.KEYCODE_HOME:
              case KeyEvent.KEYCODE_PAIRING:
